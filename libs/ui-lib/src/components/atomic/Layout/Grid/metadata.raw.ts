@@ -1,0 +1,8527 @@
+import type { IPublicTypeComponentMetadata } from '@alilc/lowcode-types'
+
+export default [
+    {
+        componentName: 'MantineGrid',
+        title: '网格容器',
+        devMode: 'proCode',
+        npm: {
+            package: '@app/mantine-components',
+            version: '0.0.0',
+            exportName: 'MantineGrid',
+            main: 'libs/components/src/components/atomic/Layout/Grid/component.tsx',
+            destructuring: true,
+            subName: '',
+        },
+        props: [
+            {
+                name: 'variant',
+                propType: 'string',
+                title: {
+                    label: 'Variant',
+                    tip: 'variant | undefined',
+                },
+            },
+            {
+                name: 'children',
+                propType: {
+                    type: 'node',
+                    isRequired: true,
+                },
+                title: {
+                    label: '子元素',
+                    tip: 'children | <Col /> components only',
+                },
+            },
+            {
+                name: 'gutter',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Gutter',
+                    tip: 'gutter | Spacing between columns, key of theme.spacing or number for value',
+                },
+            },
+            {
+                name: 'gutterXs',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'GutterXs',
+                    tip: 'gutterXs | Gutter when screen size is larger than theme.breakpoints.xs',
+                },
+            },
+            {
+                name: 'gutterSm',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'GutterSm',
+                    tip: 'gutterSm | Gutter when screen size is larger than theme.breakpoints.sm',
+                },
+            },
+            {
+                name: 'gutterMd',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'GutterMd',
+                    tip: 'gutterMd | Gutter when screen size is larger than theme.breakpoints.md',
+                },
+            },
+            {
+                name: 'gutterLg',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'GutterLg',
+                    tip: 'gutterLg | Gutter when screen size is larger than theme.breakpoints.lg',
+                },
+            },
+            {
+                name: 'gutterXl',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'GutterXl',
+                    tip: 'gutterXl | Gutter when screen size is larger than theme.breakpoints.xl',
+                },
+            },
+            {
+                name: 'grow',
+                propType: 'bool',
+                title: {
+                    label: 'Grow',
+                    tip: 'grow | Should columns in the last row take 100% of grid width',
+                },
+            },
+            {
+                name: 'justify',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'space-around',
+                                'space-between',
+                                'space-evenly',
+                                'stretch',
+                                'center',
+                                'end',
+                                'flex-end',
+                                'flex-start',
+                                'start',
+                                'left',
+                                'normal',
+                                'right',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Justify',
+                    tip: 'justify | Set grid justify-content property',
+                },
+            },
+            {
+                name: 'align',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'space-around',
+                                'space-between',
+                                'space-evenly',
+                                'stretch',
+                                'center',
+                                'end',
+                                'flex-end',
+                                'flex-start',
+                                'start',
+                                'normal',
+                                'baseline',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Align',
+                    tip: 'align | Set grid align-content property',
+                },
+            },
+            {
+                name: 'columns',
+                propType: 'number',
+                title: {
+                    label: 'Columns',
+                    tip: 'columns | Amount of columns in each row',
+                },
+            },
+            {
+                name: 'className',
+                propType: 'string',
+                title: {
+                    label: 'ClassName',
+                    tip: 'className | undefined',
+                },
+            },
+            {
+                name: 'style',
+                propType: 'object',
+                title: {
+                    label: 'Style',
+                    tip: 'style | undefined',
+                },
+            },
+            {
+                name: 'sx',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        {
+                            type: 'objectOf',
+                            value: 'oneOfType',
+                        },
+                        {
+                            type: 'func',
+                            params: [
+                                {
+                                    name: 'theme',
+                                    propType: {
+                                        type: 'shape',
+                                        value: [
+                                            {
+                                                name: 'dir',
+                                                propType: {
+                                                    type: 'oneOf',
+                                                    isRequired: true,
+                                                    value: ['ltr', 'rtl'],
+                                                },
+                                            },
+                                            {
+                                                name: 'primaryShade',
+                                                propType: {
+                                                    type: 'oneOfType',
+                                                    isRequired: true,
+                                                    value: [
+                                                        {
+                                                            type: 'shape',
+                                                            value: [
+                                                                {
+                                                                    name: 'light',
+                                                                    propType: {
+                                                                        type: 'oneOf',
+                                                                        isRequired:
+                                                                            true,
+                                                                        value: [
+                                                                            0,
+                                                                            1,
+                                                                            2,
+                                                                            3,
+                                                                            4,
+                                                                            5,
+                                                                            6,
+                                                                            7,
+                                                                            8,
+                                                                            9,
+                                                                        ],
+                                                                    },
+                                                                },
+                                                                {
+                                                                    name: 'dark',
+                                                                    propType: {
+                                                                        type: 'oneOf',
+                                                                        isRequired:
+                                                                            true,
+                                                                        value: [
+                                                                            0,
+                                                                            1,
+                                                                            2,
+                                                                            3,
+                                                                            4,
+                                                                            5,
+                                                                            6,
+                                                                            7,
+                                                                            8,
+                                                                            9,
+                                                                        ],
+                                                                    },
+                                                                },
+                                                            ],
+                                                        },
+                                                        {
+                                                            type: 'oneOf',
+                                                            value: [
+                                                                0, 1, 2, 3, 4,
+                                                                5, 6, 7, 8, 9,
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'focusRing',
+                                                propType: {
+                                                    type: 'oneOf',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'auto',
+                                                        'always',
+                                                        'never',
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'defaultRadius',
+                                                propType: {
+                                                    type: 'oneOfType',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'number',
+                                                        'object',
+                                                        {
+                                                            type: 'oneOf',
+                                                            value: [
+                                                                'xs',
+                                                                'sm',
+                                                                'md',
+                                                                'lg',
+                                                                'xl',
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'loader',
+                                                propType: {
+                                                    type: 'oneOf',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'bars',
+                                                        'oval',
+                                                        'dots',
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'colorScheme',
+                                                propType: {
+                                                    type: 'oneOf',
+                                                    isRequired: true,
+                                                    value: ['light', 'dark'],
+                                                },
+                                            },
+                                            {
+                                                name: 'white',
+                                                propType: {
+                                                    type: 'string',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'black',
+                                                propType: {
+                                                    type: 'string',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'colors',
+                                                propType: {
+                                                    type: 'object',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'fontFamily',
+                                                propType: {
+                                                    type: 'oneOfType',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'object',
+                                                        {
+                                                            type: 'oneOf',
+                                                            value: [
+                                                                '-moz-initial',
+                                                                'inherit',
+                                                                'initial',
+                                                                'revert',
+                                                                'revert-layer',
+                                                                'unset',
+                                                                'cursive',
+                                                                'fantasy',
+                                                                'monospace',
+                                                                'sans-serif',
+                                                                'serif',
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'lineHeight',
+                                                propType: {
+                                                    type: 'oneOfType',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'string',
+                                                        'number',
+                                                        'object',
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'transitionTimingFunction',
+                                                propType: {
+                                                    type: 'oneOfType',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'object',
+                                                        {
+                                                            type: 'oneOf',
+                                                            value: [
+                                                                '-moz-initial',
+                                                                'inherit',
+                                                                'initial',
+                                                                'revert',
+                                                                'revert-layer',
+                                                                'unset',
+                                                                'ease',
+                                                                'ease-in',
+                                                                'ease-in-out',
+                                                                'ease-out',
+                                                                'step-end',
+                                                                'step-start',
+                                                                'linear',
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'fontFamilyMonospace',
+                                                propType: {
+                                                    type: 'oneOfType',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'object',
+                                                        {
+                                                            type: 'oneOf',
+                                                            value: [
+                                                                '-moz-initial',
+                                                                'inherit',
+                                                                'initial',
+                                                                'revert',
+                                                                'revert-layer',
+                                                                'unset',
+                                                                'cursive',
+                                                                'fantasy',
+                                                                'monospace',
+                                                                'sans-serif',
+                                                                'serif',
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'primaryColor',
+                                                propType: {
+                                                    type: 'oneOfType',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'object',
+                                                        {
+                                                            type: 'oneOf',
+                                                            value: [
+                                                                'dark',
+                                                                'gray',
+                                                                'red',
+                                                                'pink',
+                                                                'grape',
+                                                                'violet',
+                                                                'indigo',
+                                                                'blue',
+                                                                'cyan',
+                                                                'green',
+                                                                'lime',
+                                                                'yellow',
+                                                                'orange',
+                                                                'teal',
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'respectReducedMotion',
+                                                propType: {
+                                                    type: 'bool',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'cursorType',
+                                                propType: {
+                                                    type: 'oneOf',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'default',
+                                                        'pointer',
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'defaultGradient',
+                                                propType: {
+                                                    type: 'shape',
+                                                    isRequired: true,
+                                                    value: [
+                                                        {
+                                                            name: 'from',
+                                                            propType: {
+                                                                type: 'string',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'to',
+                                                            propType: {
+                                                                type: 'string',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'deg',
+                                                            propType: 'number',
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'fontSizes',
+                                                propType: {
+                                                    type: 'object',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'radius',
+                                                propType: {
+                                                    type: 'object',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'spacing',
+                                                propType: {
+                                                    type: 'object',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'breakpoints',
+                                                propType: {
+                                                    type: 'object',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'shadows',
+                                                propType: {
+                                                    type: 'object',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'headings',
+                                                propType: {
+                                                    type: 'shape',
+                                                    isRequired: true,
+                                                    value: [
+                                                        {
+                                                            name: 'fontFamily',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'object',
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            '-moz-initial',
+                                                                            'inherit',
+                                                                            'initial',
+                                                                            'revert',
+                                                                            'revert-layer',
+                                                                            'unset',
+                                                                            'cursive',
+                                                                            'fantasy',
+                                                                            'monospace',
+                                                                            'sans-serif',
+                                                                            'serif',
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'fontWeight',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'object',
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            '-moz-initial',
+                                                                            'inherit',
+                                                                            'initial',
+                                                                            'revert',
+                                                                            'revert-layer',
+                                                                            'unset',
+                                                                            'normal',
+                                                                            'bold',
+                                                                            'bolder',
+                                                                            'lighter',
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'sizes',
+                                                            propType: {
+                                                                type: 'shape',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    {
+                                                                        name: 'h1',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'fontSize',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'fontWeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            '-moz-initial',
+                                                                                                            'inherit',
+                                                                                                            'initial',
+                                                                                                            'revert',
+                                                                                                            'revert-layer',
+                                                                                                            'unset',
+                                                                                                            'normal',
+                                                                                                            'bold',
+                                                                                                            'bolder',
+                                                                                                            'lighter',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'lineHeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'string',
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'h2',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'fontSize',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'fontWeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            '-moz-initial',
+                                                                                                            'inherit',
+                                                                                                            'initial',
+                                                                                                            'revert',
+                                                                                                            'revert-layer',
+                                                                                                            'unset',
+                                                                                                            'normal',
+                                                                                                            'bold',
+                                                                                                            'bolder',
+                                                                                                            'lighter',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'lineHeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'string',
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'h3',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'fontSize',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'fontWeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            '-moz-initial',
+                                                                                                            'inherit',
+                                                                                                            'initial',
+                                                                                                            'revert',
+                                                                                                            'revert-layer',
+                                                                                                            'unset',
+                                                                                                            'normal',
+                                                                                                            'bold',
+                                                                                                            'bolder',
+                                                                                                            'lighter',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'lineHeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'string',
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'h4',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'fontSize',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'fontWeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            '-moz-initial',
+                                                                                                            'inherit',
+                                                                                                            'initial',
+                                                                                                            'revert',
+                                                                                                            'revert-layer',
+                                                                                                            'unset',
+                                                                                                            'normal',
+                                                                                                            'bold',
+                                                                                                            'bolder',
+                                                                                                            'lighter',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'lineHeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'string',
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'h5',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'fontSize',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'fontWeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            '-moz-initial',
+                                                                                                            'inherit',
+                                                                                                            'initial',
+                                                                                                            'revert',
+                                                                                                            'revert-layer',
+                                                                                                            'unset',
+                                                                                                            'normal',
+                                                                                                            'bold',
+                                                                                                            'bolder',
+                                                                                                            'lighter',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'lineHeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'string',
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'h6',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'fontSize',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'fontWeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            '-moz-initial',
+                                                                                                            'inherit',
+                                                                                                            'initial',
+                                                                                                            'revert',
+                                                                                                            'revert-layer',
+                                                                                                            'unset',
+                                                                                                            'normal',
+                                                                                                            'bold',
+                                                                                                            'bolder',
+                                                                                                            'lighter',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'lineHeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'string',
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'fn',
+                                                propType: {
+                                                    type: 'shape',
+                                                    isRequired: true,
+                                                    value: [
+                                                        {
+                                                            name: 'fontStyles',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                raw: '() => any',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'focusStyles',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'selector',
+                                                                        propType:
+                                                                            'string',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(selector?: string) => any',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'cover',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'offset',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOfType',
+                                                                                value: [
+                                                                                    'string',
+                                                                                    'number',
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(offset?: string | number) => any',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'themeColor',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'color',
+                                                                        propType:
+                                                                            'string',
+                                                                    },
+                                                                    {
+                                                                        name: 'shade',
+                                                                        propType:
+                                                                            'number',
+                                                                    },
+                                                                    {
+                                                                        name: 'primaryFallback',
+                                                                        propType:
+                                                                            'bool',
+                                                                    },
+                                                                    {
+                                                                        name: 'useSplittedShade',
+                                                                        propType:
+                                                                            'bool',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(color: string, shade?: number, primaryFallback?: boolean, useSplittedShade?: boolean) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'rgba',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'color',
+                                                                        propType:
+                                                                            'string',
+                                                                    },
+                                                                    {
+                                                                        name: 'alpha',
+                                                                        propType:
+                                                                            'number',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(color: string, alpha: number) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'linearGradient',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'deg',
+                                                                        propType:
+                                                                            'number',
+                                                                    },
+                                                                    {
+                                                                        name: 'colors',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'arrayOf',
+                                                                                value: 'string',
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(deg: number, ...colors: string[]) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'radialGradient',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'colors',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'arrayOf',
+                                                                                value: 'string',
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(...colors: string[]) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'gradient',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'gradient',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'from',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'to',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'deg',
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(gradient?: MantineGradient) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'smallerThan',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'breakpoint',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOfType',
+                                                                                value: [
+                                                                                    'number',
+                                                                                    'object',
+                                                                                    {
+                                                                                        type: 'oneOf',
+                                                                                        value: [
+                                                                                            'xs',
+                                                                                            'sm',
+                                                                                            'md',
+                                                                                            'lg',
+                                                                                            'xl',
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(breakpoint: MantineNumberSize) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'largerThan',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'breakpoint',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOfType',
+                                                                                value: [
+                                                                                    'number',
+                                                                                    'object',
+                                                                                    {
+                                                                                        type: 'oneOf',
+                                                                                        value: [
+                                                                                            'xs',
+                                                                                            'sm',
+                                                                                            'md',
+                                                                                            'lg',
+                                                                                            'xl',
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(breakpoint: MantineNumberSize) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'lighten',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'color',
+                                                                        propType:
+                                                                            'string',
+                                                                    },
+                                                                    {
+                                                                        name: 'alpha',
+                                                                        propType:
+                                                                            'number',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(color: string, alpha: number) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'darken',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'color',
+                                                                        propType:
+                                                                            'string',
+                                                                    },
+                                                                    {
+                                                                        name: 'alpha',
+                                                                        propType:
+                                                                            'number',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(color: string, alpha: number) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'radius',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'size',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOfType',
+                                                                                value: [
+                                                                                    'number',
+                                                                                    'object',
+                                                                                    {
+                                                                                        type: 'oneOf',
+                                                                                        value: [
+                                                                                            'xs',
+                                                                                            'sm',
+                                                                                            'md',
+                                                                                            'lg',
+                                                                                            'xl',
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(size?: MantineNumberSize) => string | number',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'variant',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'payload',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'variant',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'color',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                value: [
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            'dark',
+                                                                                                            'gray',
+                                                                                                            'red',
+                                                                                                            'pink',
+                                                                                                            'grape',
+                                                                                                            'violet',
+                                                                                                            'indigo',
+                                                                                                            'blue',
+                                                                                                            'cyan',
+                                                                                                            'green',
+                                                                                                            'lime',
+                                                                                                            'yellow',
+                                                                                                            'orange',
+                                                                                                            'teal',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'gradient',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'from',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'to',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'deg',
+                                                                                                        propType:
+                                                                                                            'number',
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'primaryFallback',
+                                                                                        propType:
+                                                                                            'bool',
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(payload: VariantInput) => VariantOutput',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'primaryShade',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'colorScheme',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOf',
+                                                                                value: [
+                                                                                    'light',
+                                                                                    'dark',
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(colorScheme?: ColorScheme) => Shade',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'hover',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'hoverStyle',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'objectOf',
+                                                                                value: 'oneOfType',
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(hoverStyle: CSSObject) => any',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'primaryColor',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'colorScheme',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOf',
+                                                                                value: [
+                                                                                    'light',
+                                                                                    'dark',
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(colorScheme?: ColorScheme) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'placeholderStyles',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                raw: '() => any',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'dimmed',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                raw: '() => string',
+                                                            },
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'other',
+                                                propType: {
+                                                    type: 'object',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'activeStyles',
+                                                propType: {
+                                                    type: 'objectOf',
+                                                    isRequired: true,
+                                                    value: 'oneOfType',
+                                                },
+                                            },
+                                            {
+                                                name: 'datesLocale',
+                                                propType: {
+                                                    type: 'string',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'components',
+                                                propType: {
+                                                    type: 'objectOf',
+                                                    isRequired: true,
+                                                    value: 'shape',
+                                                },
+                                            },
+                                            {
+                                                name: 'globalStyles',
+                                                propType: {
+                                                    type: 'func',
+                                                    isRequired: true,
+                                                    params: [
+                                                        {
+                                                            name: 'theme',
+                                                            propType: 'object',
+                                                        },
+                                                    ],
+                                                    raw: '(theme: MantineTheme) => CSSObject',
+                                                },
+                                            },
+                                            {
+                                                name: 'focusRingStyles',
+                                                propType: {
+                                                    type: 'shape',
+                                                    isRequired: true,
+                                                    value: [
+                                                        {
+                                                            name: 'styles',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'theme',
+                                                                        propType:
+                                                                            'object',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(theme: Pick<MantineTheme, "colorScheme" | "fontFamily" | "lineHeight" | "transitionTimingFunction" | "dir" | "primaryShade" | "focusRing" | "defaultRadius" | "loader" | ... 19 more ... | "focusRingStyles">) => CSSObject',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'resetStyles',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'theme',
+                                                                        propType:
+                                                                            'object',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(theme: Pick<MantineTheme, "colorScheme" | "fontFamily" | "lineHeight" | "transitionTimingFunction" | "dir" | "primaryShade" | "focusRing" | "defaultRadius" | "loader" | ... 19 more ... | "focusRingStyles">) => CSSObject',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'inputStyles',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'theme',
+                                                                        propType:
+                                                                            'object',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(theme: Pick<MantineTheme, "colorScheme" | "fontFamily" | "lineHeight" | "transitionTimingFunction" | "dir" | "primaryShade" | "focusRing" | "defaultRadius" | "loader" | ... 19 more ... | "focusRingStyles">) => CSSObject',
+                                                            },
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                        ],
+                                    },
+                                },
+                            ],
+                            raw: '(theme: MantineTheme) => CSSObject',
+                        },
+                        {
+                            type: 'arrayOf',
+                            value: {
+                                type: 'oneOfType',
+                                value: [
+                                    {
+                                        type: 'objectOf',
+                                        value: 'oneOfType',
+                                    },
+                                    {
+                                        type: 'func',
+                                        params: [
+                                            {
+                                                name: 'theme',
+                                                propType: {
+                                                    type: 'shape',
+                                                    value: [
+                                                        {
+                                                            name: 'dir',
+                                                            propType: {
+                                                                type: 'oneOf',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'ltr',
+                                                                    'rtl',
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'primaryShade',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    {
+                                                                        type: 'shape',
+                                                                        value: [
+                                                                            {
+                                                                                name: 'light',
+                                                                                propType:
+                                                                                    {
+                                                                                        type: 'oneOf',
+                                                                                        isRequired:
+                                                                                            true,
+                                                                                        value: [
+                                                                                            0,
+                                                                                            1,
+                                                                                            2,
+                                                                                            3,
+                                                                                            4,
+                                                                                            5,
+                                                                                            6,
+                                                                                            7,
+                                                                                            8,
+                                                                                            9,
+                                                                                        ],
+                                                                                    },
+                                                                            },
+                                                                            {
+                                                                                name: 'dark',
+                                                                                propType:
+                                                                                    {
+                                                                                        type: 'oneOf',
+                                                                                        isRequired:
+                                                                                            true,
+                                                                                        value: [
+                                                                                            0,
+                                                                                            1,
+                                                                                            2,
+                                                                                            3,
+                                                                                            4,
+                                                                                            5,
+                                                                                            6,
+                                                                                            7,
+                                                                                            8,
+                                                                                            9,
+                                                                                        ],
+                                                                                    },
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            0,
+                                                                            1,
+                                                                            2,
+                                                                            3,
+                                                                            4,
+                                                                            5,
+                                                                            6,
+                                                                            7,
+                                                                            8,
+                                                                            9,
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'focusRing',
+                                                            propType: {
+                                                                type: 'oneOf',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'auto',
+                                                                    'always',
+                                                                    'never',
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'defaultRadius',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'number',
+                                                                    'object',
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            'xs',
+                                                                            'sm',
+                                                                            'md',
+                                                                            'lg',
+                                                                            'xl',
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'loader',
+                                                            propType: {
+                                                                type: 'oneOf',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'bars',
+                                                                    'oval',
+                                                                    'dots',
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'colorScheme',
+                                                            propType: {
+                                                                type: 'oneOf',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'light',
+                                                                    'dark',
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'white',
+                                                            propType: {
+                                                                type: 'string',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'black',
+                                                            propType: {
+                                                                type: 'string',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'colors',
+                                                            propType: {
+                                                                type: 'object',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'fontFamily',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'object',
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            '-moz-initial',
+                                                                            'inherit',
+                                                                            'initial',
+                                                                            'revert',
+                                                                            'revert-layer',
+                                                                            'unset',
+                                                                            'cursive',
+                                                                            'fantasy',
+                                                                            'monospace',
+                                                                            'sans-serif',
+                                                                            'serif',
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'lineHeight',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'string',
+                                                                    'number',
+                                                                    'object',
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'transitionTimingFunction',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'object',
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            '-moz-initial',
+                                                                            'inherit',
+                                                                            'initial',
+                                                                            'revert',
+                                                                            'revert-layer',
+                                                                            'unset',
+                                                                            'ease',
+                                                                            'ease-in',
+                                                                            'ease-in-out',
+                                                                            'ease-out',
+                                                                            'step-end',
+                                                                            'step-start',
+                                                                            'linear',
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'fontFamilyMonospace',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'object',
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            '-moz-initial',
+                                                                            'inherit',
+                                                                            'initial',
+                                                                            'revert',
+                                                                            'revert-layer',
+                                                                            'unset',
+                                                                            'cursive',
+                                                                            'fantasy',
+                                                                            'monospace',
+                                                                            'sans-serif',
+                                                                            'serif',
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'primaryColor',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'object',
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            'dark',
+                                                                            'gray',
+                                                                            'red',
+                                                                            'pink',
+                                                                            'grape',
+                                                                            'violet',
+                                                                            'indigo',
+                                                                            'blue',
+                                                                            'cyan',
+                                                                            'green',
+                                                                            'lime',
+                                                                            'yellow',
+                                                                            'orange',
+                                                                            'teal',
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'respectReducedMotion',
+                                                            propType: {
+                                                                type: 'bool',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'cursorType',
+                                                            propType: {
+                                                                type: 'oneOf',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'default',
+                                                                    'pointer',
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'defaultGradient',
+                                                            propType: {
+                                                                type: 'shape',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    {
+                                                                        name: 'from',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'string',
+                                                                                isRequired:
+                                                                                    true,
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'to',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'string',
+                                                                                isRequired:
+                                                                                    true,
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'deg',
+                                                                        propType:
+                                                                            'number',
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'fontSizes',
+                                                            propType: {
+                                                                type: 'object',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'radius',
+                                                            propType: {
+                                                                type: 'object',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'spacing',
+                                                            propType: {
+                                                                type: 'object',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'breakpoints',
+                                                            propType: {
+                                                                type: 'object',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'shadows',
+                                                            propType: {
+                                                                type: 'object',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'headings',
+                                                            propType: {
+                                                                type: 'shape',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    {
+                                                                        name: 'fontFamily',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOfType',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    'object',
+                                                                                    {
+                                                                                        type: 'oneOf',
+                                                                                        value: [
+                                                                                            '-moz-initial',
+                                                                                            'inherit',
+                                                                                            'initial',
+                                                                                            'revert',
+                                                                                            'revert-layer',
+                                                                                            'unset',
+                                                                                            'cursive',
+                                                                                            'fantasy',
+                                                                                            'monospace',
+                                                                                            'sans-serif',
+                                                                                            'serif',
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'fontWeight',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOfType',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    'object',
+                                                                                    {
+                                                                                        type: 'oneOf',
+                                                                                        value: [
+                                                                                            '-moz-initial',
+                                                                                            'inherit',
+                                                                                            'initial',
+                                                                                            'revert',
+                                                                                            'revert-layer',
+                                                                                            'unset',
+                                                                                            'normal',
+                                                                                            'bold',
+                                                                                            'bolder',
+                                                                                            'lighter',
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'sizes',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'h1',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'fontSize',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'fontWeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'object',
+                                                                                                                    {
+                                                                                                                        type: 'oneOf',
+                                                                                                                        value: [
+                                                                                                                            '-moz-initial',
+                                                                                                                            'inherit',
+                                                                                                                            'initial',
+                                                                                                                            'revert',
+                                                                                                                            'revert-layer',
+                                                                                                                            'unset',
+                                                                                                                            'normal',
+                                                                                                                            'bold',
+                                                                                                                            'bolder',
+                                                                                                                            'lighter',
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'lineHeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'string',
+                                                                                                                    'number',
+                                                                                                                    'object',
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'h2',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'fontSize',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'fontWeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'object',
+                                                                                                                    {
+                                                                                                                        type: 'oneOf',
+                                                                                                                        value: [
+                                                                                                                            '-moz-initial',
+                                                                                                                            'inherit',
+                                                                                                                            'initial',
+                                                                                                                            'revert',
+                                                                                                                            'revert-layer',
+                                                                                                                            'unset',
+                                                                                                                            'normal',
+                                                                                                                            'bold',
+                                                                                                                            'bolder',
+                                                                                                                            'lighter',
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'lineHeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'string',
+                                                                                                                    'number',
+                                                                                                                    'object',
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'h3',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'fontSize',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'fontWeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'object',
+                                                                                                                    {
+                                                                                                                        type: 'oneOf',
+                                                                                                                        value: [
+                                                                                                                            '-moz-initial',
+                                                                                                                            'inherit',
+                                                                                                                            'initial',
+                                                                                                                            'revert',
+                                                                                                                            'revert-layer',
+                                                                                                                            'unset',
+                                                                                                                            'normal',
+                                                                                                                            'bold',
+                                                                                                                            'bolder',
+                                                                                                                            'lighter',
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'lineHeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'string',
+                                                                                                                    'number',
+                                                                                                                    'object',
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'h4',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'fontSize',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'fontWeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'object',
+                                                                                                                    {
+                                                                                                                        type: 'oneOf',
+                                                                                                                        value: [
+                                                                                                                            '-moz-initial',
+                                                                                                                            'inherit',
+                                                                                                                            'initial',
+                                                                                                                            'revert',
+                                                                                                                            'revert-layer',
+                                                                                                                            'unset',
+                                                                                                                            'normal',
+                                                                                                                            'bold',
+                                                                                                                            'bolder',
+                                                                                                                            'lighter',
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'lineHeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'string',
+                                                                                                                    'number',
+                                                                                                                    'object',
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'h5',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'fontSize',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'fontWeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'object',
+                                                                                                                    {
+                                                                                                                        type: 'oneOf',
+                                                                                                                        value: [
+                                                                                                                            '-moz-initial',
+                                                                                                                            'inherit',
+                                                                                                                            'initial',
+                                                                                                                            'revert',
+                                                                                                                            'revert-layer',
+                                                                                                                            'unset',
+                                                                                                                            'normal',
+                                                                                                                            'bold',
+                                                                                                                            'bolder',
+                                                                                                                            'lighter',
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'lineHeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'string',
+                                                                                                                    'number',
+                                                                                                                    'object',
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'h6',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'fontSize',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'fontWeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'object',
+                                                                                                                    {
+                                                                                                                        type: 'oneOf',
+                                                                                                                        value: [
+                                                                                                                            '-moz-initial',
+                                                                                                                            'inherit',
+                                                                                                                            'initial',
+                                                                                                                            'revert',
+                                                                                                                            'revert-layer',
+                                                                                                                            'unset',
+                                                                                                                            'normal',
+                                                                                                                            'bold',
+                                                                                                                            'bolder',
+                                                                                                                            'lighter',
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'lineHeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'string',
+                                                                                                                    'number',
+                                                                                                                    'object',
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'fn',
+                                                            propType: {
+                                                                type: 'shape',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    {
+                                                                        name: 'fontStyles',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                raw: '() => any',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'focusStyles',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'selector',
+                                                                                        propType:
+                                                                                            'string',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(selector?: string) => any',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'cover',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'offset',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                value: [
+                                                                                                    'string',
+                                                                                                    'number',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(offset?: string | number) => any',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'themeColor',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'color',
+                                                                                        propType:
+                                                                                            'string',
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'shade',
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'primaryFallback',
+                                                                                        propType:
+                                                                                            'bool',
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'useSplittedShade',
+                                                                                        propType:
+                                                                                            'bool',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(color: string, shade?: number, primaryFallback?: boolean, useSplittedShade?: boolean) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'rgba',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'color',
+                                                                                        propType:
+                                                                                            'string',
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'alpha',
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(color: string, alpha: number) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'linearGradient',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'deg',
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'colors',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'arrayOf',
+                                                                                                value: 'string',
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(deg: number, ...colors: string[]) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'radialGradient',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'colors',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'arrayOf',
+                                                                                                value: 'string',
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(...colors: string[]) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'gradient',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'gradient',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'from',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'to',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'deg',
+                                                                                                        propType:
+                                                                                                            'number',
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(gradient?: MantineGradient) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'smallerThan',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'breakpoint',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                value: [
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            'xs',
+                                                                                                            'sm',
+                                                                                                            'md',
+                                                                                                            'lg',
+                                                                                                            'xl',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(breakpoint: MantineNumberSize) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'largerThan',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'breakpoint',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                value: [
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            'xs',
+                                                                                                            'sm',
+                                                                                                            'md',
+                                                                                                            'lg',
+                                                                                                            'xl',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(breakpoint: MantineNumberSize) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'lighten',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'color',
+                                                                                        propType:
+                                                                                            'string',
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'alpha',
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(color: string, alpha: number) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'darken',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'color',
+                                                                                        propType:
+                                                                                            'string',
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'alpha',
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(color: string, alpha: number) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'radius',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'size',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                value: [
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            'xs',
+                                                                                                            'sm',
+                                                                                                            'md',
+                                                                                                            'lg',
+                                                                                                            'xl',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(size?: MantineNumberSize) => string | number',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'variant',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'payload',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'variant',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'color',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                value: [
+                                                                                                                    'object',
+                                                                                                                    {
+                                                                                                                        type: 'oneOf',
+                                                                                                                        value: [
+                                                                                                                            'dark',
+                                                                                                                            'gray',
+                                                                                                                            'red',
+                                                                                                                            'pink',
+                                                                                                                            'grape',
+                                                                                                                            'violet',
+                                                                                                                            'indigo',
+                                                                                                                            'blue',
+                                                                                                                            'cyan',
+                                                                                                                            'green',
+                                                                                                                            'lime',
+                                                                                                                            'yellow',
+                                                                                                                            'orange',
+                                                                                                                            'teal',
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'gradient',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'shape',
+                                                                                                                value: [
+                                                                                                                    {
+                                                                                                                        name: 'from',
+                                                                                                                        propType:
+                                                                                                                            {
+                                                                                                                                type: 'string',
+                                                                                                                                isRequired:
+                                                                                                                                    true,
+                                                                                                                            },
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        name: 'to',
+                                                                                                                        propType:
+                                                                                                                            {
+                                                                                                                                type: 'string',
+                                                                                                                                isRequired:
+                                                                                                                                    true,
+                                                                                                                            },
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        name: 'deg',
+                                                                                                                        propType:
+                                                                                                                            'number',
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'primaryFallback',
+                                                                                                        propType:
+                                                                                                            'bool',
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(payload: VariantInput) => VariantOutput',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'primaryShade',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'colorScheme',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOf',
+                                                                                                value: [
+                                                                                                    'light',
+                                                                                                    'dark',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(colorScheme?: ColorScheme) => Shade',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'hover',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'hoverStyle',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'objectOf',
+                                                                                                value: 'oneOfType',
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(hoverStyle: CSSObject) => any',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'primaryColor',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'colorScheme',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOf',
+                                                                                                value: [
+                                                                                                    'light',
+                                                                                                    'dark',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(colorScheme?: ColorScheme) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'placeholderStyles',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                raw: '() => any',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'dimmed',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                raw: '() => string',
+                                                                            },
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'other',
+                                                            propType: {
+                                                                type: 'object',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'activeStyles',
+                                                            propType: {
+                                                                type: 'objectOf',
+                                                                isRequired:
+                                                                    true,
+                                                                value: 'oneOfType',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'datesLocale',
+                                                            propType: {
+                                                                type: 'string',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'components',
+                                                            propType: {
+                                                                type: 'objectOf',
+                                                                isRequired:
+                                                                    true,
+                                                                value: 'shape',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'globalStyles',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'theme',
+                                                                        propType:
+                                                                            'object',
+                                                                    },
+                                                                ],
+                                                                raw: '(theme: MantineTheme) => CSSObject',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'focusRingStyles',
+                                                            propType: {
+                                                                type: 'shape',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    {
+                                                                        name: 'styles',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'theme',
+                                                                                        propType:
+                                                                                            'object',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(theme: Pick<MantineTheme, "colorScheme" | "fontFamily" | "lineHeight" | "transitionTimingFunction" | "dir" | "primaryShade" | "focusRing" | "defaultRadius" | "loader" | ... 19 more ... | "focusRingStyles">) => CSSObject',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'resetStyles',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'theme',
+                                                                                        propType:
+                                                                                            'object',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(theme: Pick<MantineTheme, "colorScheme" | "fontFamily" | "lineHeight" | "transitionTimingFunction" | "dir" | "primaryShade" | "focusRing" | "defaultRadius" | "loader" | ... 19 more ... | "focusRingStyles">) => CSSObject',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'inputStyles',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'theme',
+                                                                                        propType:
+                                                                                            'object',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(theme: Pick<MantineTheme, "colorScheme" | "fontFamily" | "lineHeight" | "transitionTimingFunction" | "dir" | "primaryShade" | "focusRing" | "defaultRadius" | "loader" | ... 19 more ... | "focusRingStyles">) => CSSObject',
+                                                                            },
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                        ],
+                                        raw: '(theme: MantineTheme) => CSSObject',
+                                    },
+                                ],
+                            },
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Sx',
+                    tip: 'sx | undefined',
+                },
+            },
+            {
+                name: 'classNames',
+                propType: 'object',
+                title: {
+                    label: 'ClassNames',
+                    tip: 'classNames | undefined',
+                },
+            },
+            {
+                name: 'styles',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['object', 'func'],
+                },
+                title: {
+                    label: 'Styles',
+                    tip: 'styles | undefined',
+                },
+            },
+            {
+                name: 'unstyled',
+                propType: 'bool',
+                title: {
+                    label: 'Unstyled',
+                    tip: 'unstyled | undefined',
+                },
+            },
+            {
+                name: 'm',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'M',
+                    tip: 'm | undefined',
+                },
+            },
+            {
+                name: 'my',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'My',
+                    tip: 'my | undefined',
+                },
+            },
+            {
+                name: 'mx',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Mx',
+                    tip: 'mx | undefined',
+                },
+            },
+            {
+                name: 'mt',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Mt',
+                    tip: 'mt | undefined',
+                },
+            },
+            {
+                name: 'mb',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Mb',
+                    tip: 'mb | undefined',
+                },
+            },
+            {
+                name: 'ml',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Ml',
+                    tip: 'ml | undefined',
+                },
+            },
+            {
+                name: 'mr',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Mr',
+                    tip: 'mr | undefined',
+                },
+            },
+            {
+                name: 'p',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'P',
+                    tip: 'p | undefined',
+                },
+            },
+            {
+                name: 'py',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Py',
+                    tip: 'py | undefined',
+                },
+            },
+            {
+                name: 'px',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Px',
+                    tip: 'px | undefined',
+                },
+            },
+            {
+                name: 'pt',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Pt',
+                    tip: 'pt | undefined',
+                },
+            },
+            {
+                name: 'pb',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Pb',
+                    tip: 'pb | undefined',
+                },
+            },
+            {
+                name: 'pl',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Pl',
+                    tip: 'pl | undefined',
+                },
+            },
+            {
+                name: 'pr',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Pr',
+                    tip: 'pr | undefined',
+                },
+            },
+            {
+                name: 'bg',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                'dark',
+                                'gray',
+                                'red',
+                                'pink',
+                                'grape',
+                                'violet',
+                                'indigo',
+                                'blue',
+                                'cyan',
+                                'green',
+                                'lime',
+                                'yellow',
+                                'orange',
+                                'teal',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Bg',
+                    tip: 'bg | undefined',
+                },
+            },
+            {
+                name: 'c',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                'dark',
+                                'gray',
+                                'red',
+                                'pink',
+                                'grape',
+                                'violet',
+                                'indigo',
+                                'blue',
+                                'cyan',
+                                'green',
+                                'lime',
+                                'yellow',
+                                'orange',
+                                'teal',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'C',
+                    tip: 'c | undefined',
+                },
+            },
+            {
+                name: 'opacity',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Opacity',
+                    tip: 'opacity | undefined',
+                },
+            },
+            {
+                name: 'ff',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'cursive',
+                                'fantasy',
+                                'monospace',
+                                'sans-serif',
+                                'serif',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Ff',
+                    tip: 'ff | undefined',
+                },
+            },
+            {
+                name: 'fz',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Fz',
+                    tip: 'fz | undefined',
+                },
+            },
+            {
+                name: 'fw',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'normal',
+                                'bold',
+                                'bolder',
+                                'lighter',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Fw',
+                    tip: 'fw | undefined',
+                },
+            },
+            {
+                name: 'lts',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+
+            },
+            {
+                name: 'ta',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'center',
+                                'end',
+                                'start',
+                                'left',
+                                'right',
+                                'justify',
+                                'match-parent',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Ta',
+                    tip: 'ta | undefined',
+                },
+            },
+            {
+                name: 'lh',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Lh',
+                    tip: 'lh | undefined',
+                },
+            },
+            {
+                name: 'fs',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'normal',
+                                'italic',
+                                'oblique',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Fs',
+                    tip: 'fs | undefined',
+                },
+            },
+            {
+                name: 'tt',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'capitalize',
+                                'full-size-kana',
+                                'full-width',
+                                'lowercase',
+                                'none',
+                                'uppercase',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Tt',
+                    tip: 'tt | undefined',
+                },
+            },
+            {
+                name: 'td',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Td',
+                    tip: 'td | undefined',
+                },
+            },
+            {
+                name: 'w',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'W',
+                    tip: 'w | undefined',
+                },
+            },
+            {
+                name: 'miw',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Miw',
+                    tip: 'miw | undefined',
+                },
+            },
+            {
+                name: 'maw',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Maw',
+                    tip: 'maw | undefined',
+                },
+            },
+            {
+                name: 'h',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'H',
+                    tip: 'h | undefined',
+                },
+            },
+            {
+                name: 'mih',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Mih',
+                    tip: 'mih | undefined',
+                },
+            },
+            {
+                name: 'mah',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Mah',
+                    tip: 'mah | undefined',
+                },
+            },
+            {
+                name: 'bgsz',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Bgsz',
+                    tip: 'bgsz | undefined',
+                },
+            },
+            {
+                name: 'bgp',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Bgp',
+                    tip: 'bgp | undefined',
+                },
+            },
+            {
+                name: 'bgr',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'no-repeat',
+                                'repeat',
+                                'repeat-x',
+                                'repeat-y',
+                                'round',
+                                'space',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Bgr',
+                    tip: 'bgr | undefined',
+                },
+            },
+            {
+                name: 'bga',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'fixed',
+                                'local',
+                                'scroll',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Bga',
+                    tip: 'bga | undefined',
+                },
+            },
+            {
+                name: 'pos',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'fixed',
+                                '-webkit-sticky',
+                                'absolute',
+                                'relative',
+                                'static',
+                                'sticky',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Pos',
+                    tip: 'pos | undefined',
+                },
+            },
+            {
+                name: 'top',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Top',
+                    tip: 'top | undefined',
+                },
+            },
+            {
+                name: 'left',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: '左',
+                    tip: 'left | undefined',
+                },
+            },
+            {
+                name: 'bottom',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Bottom',
+                    tip: 'bottom | undefined',
+                },
+            },
+            {
+                name: 'right',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: '右',
+                    tip: 'right | undefined',
+                },
+            },
+            {
+                name: 'inset',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Inset',
+                    tip: 'inset | undefined',
+                },
+            },
+            {
+                name: 'display',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'flex',
+                                'grid',
+                                'none',
+                                'block',
+                                'inline',
+                                'run-in',
+                                '-ms-flexbox',
+                                '-ms-grid',
+                                '-webkit-flex',
+                                'flow',
+                                'flow-root',
+                                'ruby',
+                                'table',
+                                'ruby-base',
+                                'ruby-base-container',
+                                'ruby-text',
+                                'ruby-text-container',
+                                'table-caption',
+                                'table-cell',
+                                'table-column',
+                                'table-column-group',
+                                'table-footer-group',
+                                'table-header-group',
+                                'table-row',
+                                'table-row-group',
+                                '-ms-inline-flexbox',
+                                '-ms-inline-grid',
+                                '-webkit-inline-flex',
+                                'inline-block',
+                                'inline-flex',
+                                'inline-grid',
+                                'inline-list-item',
+                                'inline-table',
+                                'contents',
+                                'list-item',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Display',
+                    tip: 'display | undefined',
+                },
+            },
+        ],
+        group: 'UI 组件',
+        category: '布局',
+        configure: {
+            component: {
+                isContainer: true,
+            },
+            supports: {
+                style: true,
+            },
+        },
+        snippets: [
+            {
+                title: '网格容器',
+                schema: {
+                    componentName: 'MantineGrid',
+                    props: {},
+                },
+            },
+        ],
+    },
+    {
+        componentName: 'MantineGrid.Col',
+        title: '网格列',
+        devMode: 'proCode',
+        npm: {
+            package: '@app/mantine-components',
+            version: '0.0.0',
+            exportName: 'MantineGrid',
+            main: 'libs/components/src/components/atomic/Layout/Grid/component.tsx',
+            destructuring: true,
+            subName: 'Col',
+        },
+        props: [
+            {
+                name: 'variant',
+                propType: 'string',
+                title: {
+                    label: 'Variant',
+                    tip: 'variant | undefined',
+                },
+            },
+            {
+                name: 'span',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        {
+                            type: 'oneOf',
+                            value: ['content', 'auto'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Span',
+                    tip: 'span | Default col span',
+                },
+            },
+            {
+                name: 'offset',
+                propType: 'number',
+                title: {
+                    label: 'Offset',
+                    tip: 'offset | Column left offset',
+                },
+            },
+            {
+                name: 'order',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Order',
+                    tip: 'order | Default col order',
+                },
+            },
+            {
+                name: 'orderXs',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'OrderXs',
+                    tip: 'orderXs | Col order at (min-width: theme.breakpoints.xs)',
+                },
+            },
+            {
+                name: 'orderSm',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'OrderSm',
+                    tip: 'orderSm | Col order at (min-width: theme.breakpoints.sm)',
+                },
+            },
+            {
+                name: 'orderMd',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'OrderMd',
+                    tip: 'orderMd | Col order at (min-width: theme.breakpoints.md)',
+                },
+            },
+            {
+                name: 'orderLg',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'OrderLg',
+                    tip: 'orderLg | Col order at (min-width: theme.breakpoints.lg)',
+                },
+            },
+            {
+                name: 'orderXl',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'OrderXl',
+                    tip: 'orderXl | Col order at (min-width: theme.breakpoints.xl)',
+                },
+            },
+            {
+                name: 'offsetXs',
+                propType: 'number',
+                title: {
+                    label: 'OffsetXs',
+                    tip: 'offsetXs | Column left offset at (min-width: theme.breakpoints.xs)',
+                },
+            },
+            {
+                name: 'offsetSm',
+                propType: 'number',
+                title: {
+                    label: 'OffsetSm',
+                    tip: 'offsetSm | Column left offset at (min-width: theme.breakpoints.sm)',
+                },
+            },
+            {
+                name: 'offsetMd',
+                propType: 'number',
+                title: {
+                    label: 'OffsetMd',
+                    tip: 'offsetMd | Column left offset at (min-width: theme.breakpoints.md)',
+                },
+            },
+            {
+                name: 'offsetLg',
+                propType: 'number',
+                title: {
+                    label: 'OffsetLg',
+                    tip: 'offsetLg | Column left offset at (min-width: theme.breakpoints.lg)',
+                },
+            },
+            {
+                name: 'offsetXl',
+                propType: 'number',
+                title: {
+                    label: 'OffsetXl',
+                    tip: 'offsetXl | Column left offset at (min-width: theme.breakpoints.xl)',
+                },
+            },
+            {
+                name: 'xs',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        {
+                            type: 'oneOf',
+                            value: ['content', 'auto'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Xs',
+                    tip: 'xs | Col span at (min-width: theme.breakpoints.xs)',
+                },
+            },
+            {
+                name: 'sm',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        {
+                            type: 'oneOf',
+                            value: ['content', 'auto'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Sm',
+                    tip: 'sm | Col span at (min-width: theme.breakpoints.sm)',
+                },
+            },
+            {
+                name: 'md',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        {
+                            type: 'oneOf',
+                            value: ['content', 'auto'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Md',
+                    tip: 'md | Col span at (min-width: theme.breakpoints.md)',
+                },
+            },
+            {
+                name: 'lg',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        {
+                            type: 'oneOf',
+                            value: ['content', 'auto'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Lg',
+                    tip: 'lg | Col span at (min-width: theme.breakpoints.lg)',
+                },
+            },
+            {
+                name: 'xl',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        {
+                            type: 'oneOf',
+                            value: ['content', 'auto'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Xl',
+                    tip: 'xl | Col span at (min-width: theme.breakpoints.xl)',
+                },
+            },
+            {
+                name: 'className',
+                propType: 'string',
+                title: {
+                    label: 'ClassName',
+                    tip: 'className | undefined',
+                },
+            },
+            {
+                name: 'style',
+                propType: 'object',
+                title: {
+                    label: 'Style',
+                    tip: 'style | undefined',
+                },
+            },
+            {
+                name: 'sx',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        {
+                            type: 'objectOf',
+                            value: 'oneOfType',
+                        },
+                        {
+                            type: 'func',
+                            params: [
+                                {
+                                    name: 'theme',
+                                    propType: {
+                                        type: 'shape',
+                                        value: [
+                                            {
+                                                name: 'dir',
+                                                propType: {
+                                                    type: 'oneOf',
+                                                    isRequired: true,
+                                                    value: ['ltr', 'rtl'],
+                                                },
+                                            },
+                                            {
+                                                name: 'primaryShade',
+                                                propType: {
+                                                    type: 'oneOfType',
+                                                    isRequired: true,
+                                                    value: [
+                                                        {
+                                                            type: 'shape',
+                                                            value: [
+                                                                {
+                                                                    name: 'light',
+                                                                    propType: {
+                                                                        type: 'oneOf',
+                                                                        isRequired:
+                                                                            true,
+                                                                        value: [
+                                                                            0,
+                                                                            1,
+                                                                            2,
+                                                                            3,
+                                                                            4,
+                                                                            5,
+                                                                            6,
+                                                                            7,
+                                                                            8,
+                                                                            9,
+                                                                        ],
+                                                                    },
+                                                                },
+                                                                {
+                                                                    name: 'dark',
+                                                                    propType: {
+                                                                        type: 'oneOf',
+                                                                        isRequired:
+                                                                            true,
+                                                                        value: [
+                                                                            0,
+                                                                            1,
+                                                                            2,
+                                                                            3,
+                                                                            4,
+                                                                            5,
+                                                                            6,
+                                                                            7,
+                                                                            8,
+                                                                            9,
+                                                                        ],
+                                                                    },
+                                                                },
+                                                            ],
+                                                        },
+                                                        {
+                                                            type: 'oneOf',
+                                                            value: [
+                                                                0, 1, 2, 3, 4,
+                                                                5, 6, 7, 8, 9,
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'focusRing',
+                                                propType: {
+                                                    type: 'oneOf',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'auto',
+                                                        'always',
+                                                        'never',
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'defaultRadius',
+                                                propType: {
+                                                    type: 'oneOfType',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'number',
+                                                        'object',
+                                                        {
+                                                            type: 'oneOf',
+                                                            value: [
+                                                                'xs',
+                                                                'sm',
+                                                                'md',
+                                                                'lg',
+                                                                'xl',
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'loader',
+                                                propType: {
+                                                    type: 'oneOf',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'bars',
+                                                        'oval',
+                                                        'dots',
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'colorScheme',
+                                                propType: {
+                                                    type: 'oneOf',
+                                                    isRequired: true,
+                                                    value: ['light', 'dark'],
+                                                },
+                                            },
+                                            {
+                                                name: 'white',
+                                                propType: {
+                                                    type: 'string',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'black',
+                                                propType: {
+                                                    type: 'string',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'colors',
+                                                propType: {
+                                                    type: 'object',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'fontFamily',
+                                                propType: {
+                                                    type: 'oneOfType',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'object',
+                                                        {
+                                                            type: 'oneOf',
+                                                            value: [
+                                                                '-moz-initial',
+                                                                'inherit',
+                                                                'initial',
+                                                                'revert',
+                                                                'revert-layer',
+                                                                'unset',
+                                                                'cursive',
+                                                                'fantasy',
+                                                                'monospace',
+                                                                'sans-serif',
+                                                                'serif',
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'lineHeight',
+                                                propType: {
+                                                    type: 'oneOfType',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'string',
+                                                        'number',
+                                                        'object',
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'transitionTimingFunction',
+                                                propType: {
+                                                    type: 'oneOfType',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'object',
+                                                        {
+                                                            type: 'oneOf',
+                                                            value: [
+                                                                '-moz-initial',
+                                                                'inherit',
+                                                                'initial',
+                                                                'revert',
+                                                                'revert-layer',
+                                                                'unset',
+                                                                'ease',
+                                                                'ease-in',
+                                                                'ease-in-out',
+                                                                'ease-out',
+                                                                'step-end',
+                                                                'step-start',
+                                                                'linear',
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'fontFamilyMonospace',
+                                                propType: {
+                                                    type: 'oneOfType',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'object',
+                                                        {
+                                                            type: 'oneOf',
+                                                            value: [
+                                                                '-moz-initial',
+                                                                'inherit',
+                                                                'initial',
+                                                                'revert',
+                                                                'revert-layer',
+                                                                'unset',
+                                                                'cursive',
+                                                                'fantasy',
+                                                                'monospace',
+                                                                'sans-serif',
+                                                                'serif',
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'primaryColor',
+                                                propType: {
+                                                    type: 'oneOfType',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'object',
+                                                        {
+                                                            type: 'oneOf',
+                                                            value: [
+                                                                'dark',
+                                                                'gray',
+                                                                'red',
+                                                                'pink',
+                                                                'grape',
+                                                                'violet',
+                                                                'indigo',
+                                                                'blue',
+                                                                'cyan',
+                                                                'green',
+                                                                'lime',
+                                                                'yellow',
+                                                                'orange',
+                                                                'teal',
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'respectReducedMotion',
+                                                propType: {
+                                                    type: 'bool',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'cursorType',
+                                                propType: {
+                                                    type: 'oneOf',
+                                                    isRequired: true,
+                                                    value: [
+                                                        'default',
+                                                        'pointer',
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'defaultGradient',
+                                                propType: {
+                                                    type: 'shape',
+                                                    isRequired: true,
+                                                    value: [
+                                                        {
+                                                            name: 'from',
+                                                            propType: {
+                                                                type: 'string',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'to',
+                                                            propType: {
+                                                                type: 'string',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'deg',
+                                                            propType: 'number',
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'fontSizes',
+                                                propType: {
+                                                    type: 'object',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'radius',
+                                                propType: {
+                                                    type: 'object',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'spacing',
+                                                propType: {
+                                                    type: 'object',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'breakpoints',
+                                                propType: {
+                                                    type: 'object',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'shadows',
+                                                propType: {
+                                                    type: 'object',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'headings',
+                                                propType: {
+                                                    type: 'shape',
+                                                    isRequired: true,
+                                                    value: [
+                                                        {
+                                                            name: 'fontFamily',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'object',
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            '-moz-initial',
+                                                                            'inherit',
+                                                                            'initial',
+                                                                            'revert',
+                                                                            'revert-layer',
+                                                                            'unset',
+                                                                            'cursive',
+                                                                            'fantasy',
+                                                                            'monospace',
+                                                                            'sans-serif',
+                                                                            'serif',
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'fontWeight',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'object',
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            '-moz-initial',
+                                                                            'inherit',
+                                                                            'initial',
+                                                                            'revert',
+                                                                            'revert-layer',
+                                                                            'unset',
+                                                                            'normal',
+                                                                            'bold',
+                                                                            'bolder',
+                                                                            'lighter',
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'sizes',
+                                                            propType: {
+                                                                type: 'shape',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    {
+                                                                        name: 'h1',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'fontSize',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'fontWeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            '-moz-initial',
+                                                                                                            'inherit',
+                                                                                                            'initial',
+                                                                                                            'revert',
+                                                                                                            'revert-layer',
+                                                                                                            'unset',
+                                                                                                            'normal',
+                                                                                                            'bold',
+                                                                                                            'bolder',
+                                                                                                            'lighter',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'lineHeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'string',
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'h2',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'fontSize',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'fontWeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            '-moz-initial',
+                                                                                                            'inherit',
+                                                                                                            'initial',
+                                                                                                            'revert',
+                                                                                                            'revert-layer',
+                                                                                                            'unset',
+                                                                                                            'normal',
+                                                                                                            'bold',
+                                                                                                            'bolder',
+                                                                                                            'lighter',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'lineHeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'string',
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'h3',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'fontSize',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'fontWeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            '-moz-initial',
+                                                                                                            'inherit',
+                                                                                                            'initial',
+                                                                                                            'revert',
+                                                                                                            'revert-layer',
+                                                                                                            'unset',
+                                                                                                            'normal',
+                                                                                                            'bold',
+                                                                                                            'bolder',
+                                                                                                            'lighter',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'lineHeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'string',
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'h4',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'fontSize',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'fontWeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            '-moz-initial',
+                                                                                                            'inherit',
+                                                                                                            'initial',
+                                                                                                            'revert',
+                                                                                                            'revert-layer',
+                                                                                                            'unset',
+                                                                                                            'normal',
+                                                                                                            'bold',
+                                                                                                            'bolder',
+                                                                                                            'lighter',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'lineHeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'string',
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'h5',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'fontSize',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'fontWeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            '-moz-initial',
+                                                                                                            'inherit',
+                                                                                                            'initial',
+                                                                                                            'revert',
+                                                                                                            'revert-layer',
+                                                                                                            'unset',
+                                                                                                            'normal',
+                                                                                                            'bold',
+                                                                                                            'bolder',
+                                                                                                            'lighter',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'lineHeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'string',
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'h6',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'fontSize',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'fontWeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            '-moz-initial',
+                                                                                                            'inherit',
+                                                                                                            'initial',
+                                                                                                            'revert',
+                                                                                                            'revert-layer',
+                                                                                                            'unset',
+                                                                                                            'normal',
+                                                                                                            'bold',
+                                                                                                            'bolder',
+                                                                                                            'lighter',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'lineHeight',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    'string',
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'fn',
+                                                propType: {
+                                                    type: 'shape',
+                                                    isRequired: true,
+                                                    value: [
+                                                        {
+                                                            name: 'fontStyles',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                raw: '() => any',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'focusStyles',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'selector',
+                                                                        propType:
+                                                                            'string',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(selector?: string) => any',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'cover',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'offset',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOfType',
+                                                                                value: [
+                                                                                    'string',
+                                                                                    'number',
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(offset?: string | number) => any',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'themeColor',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'color',
+                                                                        propType:
+                                                                            'string',
+                                                                    },
+                                                                    {
+                                                                        name: 'shade',
+                                                                        propType:
+                                                                            'number',
+                                                                    },
+                                                                    {
+                                                                        name: 'primaryFallback',
+                                                                        propType:
+                                                                            'bool',
+                                                                    },
+                                                                    {
+                                                                        name: 'useSplittedShade',
+                                                                        propType:
+                                                                            'bool',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(color: string, shade?: number, primaryFallback?: boolean, useSplittedShade?: boolean) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'rgba',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'color',
+                                                                        propType:
+                                                                            'string',
+                                                                    },
+                                                                    {
+                                                                        name: 'alpha',
+                                                                        propType:
+                                                                            'number',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(color: string, alpha: number) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'linearGradient',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'deg',
+                                                                        propType:
+                                                                            'number',
+                                                                    },
+                                                                    {
+                                                                        name: 'colors',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'arrayOf',
+                                                                                value: 'string',
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(deg: number, ...colors: string[]) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'radialGradient',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'colors',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'arrayOf',
+                                                                                value: 'string',
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(...colors: string[]) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'gradient',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'gradient',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'from',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'to',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'deg',
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(gradient?: MantineGradient) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'smallerThan',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'breakpoint',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOfType',
+                                                                                value: [
+                                                                                    'number',
+                                                                                    'object',
+                                                                                    {
+                                                                                        type: 'oneOf',
+                                                                                        value: [
+                                                                                            'xs',
+                                                                                            'sm',
+                                                                                            'md',
+                                                                                            'lg',
+                                                                                            'xl',
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(breakpoint: MantineNumberSize) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'largerThan',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'breakpoint',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOfType',
+                                                                                value: [
+                                                                                    'number',
+                                                                                    'object',
+                                                                                    {
+                                                                                        type: 'oneOf',
+                                                                                        value: [
+                                                                                            'xs',
+                                                                                            'sm',
+                                                                                            'md',
+                                                                                            'lg',
+                                                                                            'xl',
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(breakpoint: MantineNumberSize) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'lighten',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'color',
+                                                                        propType:
+                                                                            'string',
+                                                                    },
+                                                                    {
+                                                                        name: 'alpha',
+                                                                        propType:
+                                                                            'number',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(color: string, alpha: number) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'darken',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'color',
+                                                                        propType:
+                                                                            'string',
+                                                                    },
+                                                                    {
+                                                                        name: 'alpha',
+                                                                        propType:
+                                                                            'number',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(color: string, alpha: number) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'radius',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'size',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOfType',
+                                                                                value: [
+                                                                                    'number',
+                                                                                    'object',
+                                                                                    {
+                                                                                        type: 'oneOf',
+                                                                                        value: [
+                                                                                            'xs',
+                                                                                            'sm',
+                                                                                            'md',
+                                                                                            'lg',
+                                                                                            'xl',
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(size?: MantineNumberSize) => string | number',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'variant',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'payload',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'variant',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'string',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'color',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                value: [
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            'dark',
+                                                                                                            'gray',
+                                                                                                            'red',
+                                                                                                            'pink',
+                                                                                                            'grape',
+                                                                                                            'violet',
+                                                                                                            'indigo',
+                                                                                                            'blue',
+                                                                                                            'cyan',
+                                                                                                            'green',
+                                                                                                            'lime',
+                                                                                                            'yellow',
+                                                                                                            'orange',
+                                                                                                            'teal',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'gradient',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'from',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'to',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'deg',
+                                                                                                        propType:
+                                                                                                            'number',
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'primaryFallback',
+                                                                                        propType:
+                                                                                            'bool',
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(payload: VariantInput) => VariantOutput',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'primaryShade',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'colorScheme',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOf',
+                                                                                value: [
+                                                                                    'light',
+                                                                                    'dark',
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(colorScheme?: ColorScheme) => Shade',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'hover',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'hoverStyle',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'objectOf',
+                                                                                value: 'oneOfType',
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(hoverStyle: CSSObject) => any',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'primaryColor',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'colorScheme',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOf',
+                                                                                value: [
+                                                                                    'light',
+                                                                                    'dark',
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(colorScheme?: ColorScheme) => string',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'placeholderStyles',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                raw: '() => any',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'dimmed',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                raw: '() => string',
+                                                            },
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                            {
+                                                name: 'other',
+                                                propType: {
+                                                    type: 'object',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'activeStyles',
+                                                propType: {
+                                                    type: 'objectOf',
+                                                    isRequired: true,
+                                                    value: 'oneOfType',
+                                                },
+                                            },
+                                            {
+                                                name: 'datesLocale',
+                                                propType: {
+                                                    type: 'string',
+                                                    isRequired: true,
+                                                },
+                                            },
+                                            {
+                                                name: 'components',
+                                                propType: {
+                                                    type: 'objectOf',
+                                                    isRequired: true,
+                                                    value: 'shape',
+                                                },
+                                            },
+                                            {
+                                                name: 'globalStyles',
+                                                propType: {
+                                                    type: 'func',
+                                                    isRequired: true,
+                                                    params: [
+                                                        {
+                                                            name: 'theme',
+                                                            propType: 'object',
+                                                        },
+                                                    ],
+                                                    raw: '(theme: MantineTheme) => CSSObject',
+                                                },
+                                            },
+                                            {
+                                                name: 'focusRingStyles',
+                                                propType: {
+                                                    type: 'shape',
+                                                    isRequired: true,
+                                                    value: [
+                                                        {
+                                                            name: 'styles',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'theme',
+                                                                        propType:
+                                                                            'object',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(theme: Pick<MantineTheme, "colorScheme" | "fontFamily" | "lineHeight" | "transitionTimingFunction" | "dir" | "primaryShade" | "focusRing" | "defaultRadius" | "loader" | ... 19 more ... | "focusRingStyles">) => CSSObject',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'resetStyles',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'theme',
+                                                                        propType:
+                                                                            'object',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(theme: Pick<MantineTheme, "colorScheme" | "fontFamily" | "lineHeight" | "transitionTimingFunction" | "dir" | "primaryShade" | "focusRing" | "defaultRadius" | "loader" | ... 19 more ... | "focusRingStyles">) => CSSObject',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'inputStyles',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'theme',
+                                                                        propType:
+                                                                            'object',
+                                                                    },
+                                                                ],
+                                                                returns: {
+                                                                    propType:
+                                                                        'number',
+                                                                },
+                                                                raw: '(theme: Pick<MantineTheme, "colorScheme" | "fontFamily" | "lineHeight" | "transitionTimingFunction" | "dir" | "primaryShade" | "focusRing" | "defaultRadius" | "loader" | ... 19 more ... | "focusRingStyles">) => CSSObject',
+                                                            },
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                        ],
+                                    },
+                                },
+                            ],
+                            raw: '(theme: MantineTheme) => CSSObject',
+                        },
+                        {
+                            type: 'arrayOf',
+                            value: {
+                                type: 'oneOfType',
+                                value: [
+                                    {
+                                        type: 'objectOf',
+                                        value: 'oneOfType',
+                                    },
+                                    {
+                                        type: 'func',
+                                        params: [
+                                            {
+                                                name: 'theme',
+                                                propType: {
+                                                    type: 'shape',
+                                                    value: [
+                                                        {
+                                                            name: 'dir',
+                                                            propType: {
+                                                                type: 'oneOf',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'ltr',
+                                                                    'rtl',
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'primaryShade',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    {
+                                                                        type: 'shape',
+                                                                        value: [
+                                                                            {
+                                                                                name: 'light',
+                                                                                propType:
+                                                                                    {
+                                                                                        type: 'oneOf',
+                                                                                        isRequired:
+                                                                                            true,
+                                                                                        value: [
+                                                                                            0,
+                                                                                            1,
+                                                                                            2,
+                                                                                            3,
+                                                                                            4,
+                                                                                            5,
+                                                                                            6,
+                                                                                            7,
+                                                                                            8,
+                                                                                            9,
+                                                                                        ],
+                                                                                    },
+                                                                            },
+                                                                            {
+                                                                                name: 'dark',
+                                                                                propType:
+                                                                                    {
+                                                                                        type: 'oneOf',
+                                                                                        isRequired:
+                                                                                            true,
+                                                                                        value: [
+                                                                                            0,
+                                                                                            1,
+                                                                                            2,
+                                                                                            3,
+                                                                                            4,
+                                                                                            5,
+                                                                                            6,
+                                                                                            7,
+                                                                                            8,
+                                                                                            9,
+                                                                                        ],
+                                                                                    },
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            0,
+                                                                            1,
+                                                                            2,
+                                                                            3,
+                                                                            4,
+                                                                            5,
+                                                                            6,
+                                                                            7,
+                                                                            8,
+                                                                            9,
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'focusRing',
+                                                            propType: {
+                                                                type: 'oneOf',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'auto',
+                                                                    'always',
+                                                                    'never',
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'defaultRadius',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'number',
+                                                                    'object',
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            'xs',
+                                                                            'sm',
+                                                                            'md',
+                                                                            'lg',
+                                                                            'xl',
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'loader',
+                                                            propType: {
+                                                                type: 'oneOf',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'bars',
+                                                                    'oval',
+                                                                    'dots',
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'colorScheme',
+                                                            propType: {
+                                                                type: 'oneOf',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'light',
+                                                                    'dark',
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'white',
+                                                            propType: {
+                                                                type: 'string',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'black',
+                                                            propType: {
+                                                                type: 'string',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'colors',
+                                                            propType: {
+                                                                type: 'object',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'fontFamily',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'object',
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            '-moz-initial',
+                                                                            'inherit',
+                                                                            'initial',
+                                                                            'revert',
+                                                                            'revert-layer',
+                                                                            'unset',
+                                                                            'cursive',
+                                                                            'fantasy',
+                                                                            'monospace',
+                                                                            'sans-serif',
+                                                                            'serif',
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'lineHeight',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'string',
+                                                                    'number',
+                                                                    'object',
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'transitionTimingFunction',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'object',
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            '-moz-initial',
+                                                                            'inherit',
+                                                                            'initial',
+                                                                            'revert',
+                                                                            'revert-layer',
+                                                                            'unset',
+                                                                            'ease',
+                                                                            'ease-in',
+                                                                            'ease-in-out',
+                                                                            'ease-out',
+                                                                            'step-end',
+                                                                            'step-start',
+                                                                            'linear',
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'fontFamilyMonospace',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'object',
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            '-moz-initial',
+                                                                            'inherit',
+                                                                            'initial',
+                                                                            'revert',
+                                                                            'revert-layer',
+                                                                            'unset',
+                                                                            'cursive',
+                                                                            'fantasy',
+                                                                            'monospace',
+                                                                            'sans-serif',
+                                                                            'serif',
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'primaryColor',
+                                                            propType: {
+                                                                type: 'oneOfType',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'object',
+                                                                    {
+                                                                        type: 'oneOf',
+                                                                        value: [
+                                                                            'dark',
+                                                                            'gray',
+                                                                            'red',
+                                                                            'pink',
+                                                                            'grape',
+                                                                            'violet',
+                                                                            'indigo',
+                                                                            'blue',
+                                                                            'cyan',
+                                                                            'green',
+                                                                            'lime',
+                                                                            'yellow',
+                                                                            'orange',
+                                                                            'teal',
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'respectReducedMotion',
+                                                            propType: {
+                                                                type: 'bool',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'cursorType',
+                                                            propType: {
+                                                                type: 'oneOf',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    'default',
+                                                                    'pointer',
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'defaultGradient',
+                                                            propType: {
+                                                                type: 'shape',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    {
+                                                                        name: 'from',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'string',
+                                                                                isRequired:
+                                                                                    true,
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'to',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'string',
+                                                                                isRequired:
+                                                                                    true,
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'deg',
+                                                                        propType:
+                                                                            'number',
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'fontSizes',
+                                                            propType: {
+                                                                type: 'object',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'radius',
+                                                            propType: {
+                                                                type: 'object',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'spacing',
+                                                            propType: {
+                                                                type: 'object',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'breakpoints',
+                                                            propType: {
+                                                                type: 'object',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'shadows',
+                                                            propType: {
+                                                                type: 'object',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'headings',
+                                                            propType: {
+                                                                type: 'shape',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    {
+                                                                        name: 'fontFamily',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOfType',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    'object',
+                                                                                    {
+                                                                                        type: 'oneOf',
+                                                                                        value: [
+                                                                                            '-moz-initial',
+                                                                                            'inherit',
+                                                                                            'initial',
+                                                                                            'revert',
+                                                                                            'revert-layer',
+                                                                                            'unset',
+                                                                                            'cursive',
+                                                                                            'fantasy',
+                                                                                            'monospace',
+                                                                                            'sans-serif',
+                                                                                            'serif',
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'fontWeight',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'oneOfType',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    'object',
+                                                                                    {
+                                                                                        type: 'oneOf',
+                                                                                        value: [
+                                                                                            '-moz-initial',
+                                                                                            'inherit',
+                                                                                            'initial',
+                                                                                            'revert',
+                                                                                            'revert-layer',
+                                                                                            'unset',
+                                                                                            'normal',
+                                                                                            'bold',
+                                                                                            'bolder',
+                                                                                            'lighter',
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'sizes',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'shape',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                value: [
+                                                                                    {
+                                                                                        name: 'h1',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'fontSize',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'fontWeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'object',
+                                                                                                                    {
+                                                                                                                        type: 'oneOf',
+                                                                                                                        value: [
+                                                                                                                            '-moz-initial',
+                                                                                                                            'inherit',
+                                                                                                                            'initial',
+                                                                                                                            'revert',
+                                                                                                                            'revert-layer',
+                                                                                                                            'unset',
+                                                                                                                            'normal',
+                                                                                                                            'bold',
+                                                                                                                            'bolder',
+                                                                                                                            'lighter',
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'lineHeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'string',
+                                                                                                                    'number',
+                                                                                                                    'object',
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'h2',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'fontSize',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'fontWeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'object',
+                                                                                                                    {
+                                                                                                                        type: 'oneOf',
+                                                                                                                        value: [
+                                                                                                                            '-moz-initial',
+                                                                                                                            'inherit',
+                                                                                                                            'initial',
+                                                                                                                            'revert',
+                                                                                                                            'revert-layer',
+                                                                                                                            'unset',
+                                                                                                                            'normal',
+                                                                                                                            'bold',
+                                                                                                                            'bolder',
+                                                                                                                            'lighter',
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'lineHeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'string',
+                                                                                                                    'number',
+                                                                                                                    'object',
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'h3',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'fontSize',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'fontWeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'object',
+                                                                                                                    {
+                                                                                                                        type: 'oneOf',
+                                                                                                                        value: [
+                                                                                                                            '-moz-initial',
+                                                                                                                            'inherit',
+                                                                                                                            'initial',
+                                                                                                                            'revert',
+                                                                                                                            'revert-layer',
+                                                                                                                            'unset',
+                                                                                                                            'normal',
+                                                                                                                            'bold',
+                                                                                                                            'bolder',
+                                                                                                                            'lighter',
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'lineHeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'string',
+                                                                                                                    'number',
+                                                                                                                    'object',
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'h4',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'fontSize',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'fontWeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'object',
+                                                                                                                    {
+                                                                                                                        type: 'oneOf',
+                                                                                                                        value: [
+                                                                                                                            '-moz-initial',
+                                                                                                                            'inherit',
+                                                                                                                            'initial',
+                                                                                                                            'revert',
+                                                                                                                            'revert-layer',
+                                                                                                                            'unset',
+                                                                                                                            'normal',
+                                                                                                                            'bold',
+                                                                                                                            'bolder',
+                                                                                                                            'lighter',
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'lineHeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'string',
+                                                                                                                    'number',
+                                                                                                                    'object',
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'h5',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'fontSize',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'fontWeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'object',
+                                                                                                                    {
+                                                                                                                        type: 'oneOf',
+                                                                                                                        value: [
+                                                                                                                            '-moz-initial',
+                                                                                                                            'inherit',
+                                                                                                                            'initial',
+                                                                                                                            'revert',
+                                                                                                                            'revert-layer',
+                                                                                                                            'unset',
+                                                                                                                            'normal',
+                                                                                                                            'bold',
+                                                                                                                            'bolder',
+                                                                                                                            'lighter',
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'lineHeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'string',
+                                                                                                                    'number',
+                                                                                                                    'object',
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'h6',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                isRequired:
+                                                                                                    true,
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'fontSize',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'fontWeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'object',
+                                                                                                                    {
+                                                                                                                        type: 'oneOf',
+                                                                                                                        value: [
+                                                                                                                            '-moz-initial',
+                                                                                                                            'inherit',
+                                                                                                                            'initial',
+                                                                                                                            'revert',
+                                                                                                                            'revert-layer',
+                                                                                                                            'unset',
+                                                                                                                            'normal',
+                                                                                                                            'bold',
+                                                                                                                            'bolder',
+                                                                                                                            'lighter',
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'lineHeight',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                                value: [
+                                                                                                                    'string',
+                                                                                                                    'number',
+                                                                                                                    'object',
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'fn',
+                                                            propType: {
+                                                                type: 'shape',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    {
+                                                                        name: 'fontStyles',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                raw: '() => any',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'focusStyles',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'selector',
+                                                                                        propType:
+                                                                                            'string',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(selector?: string) => any',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'cover',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'offset',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                value: [
+                                                                                                    'string',
+                                                                                                    'number',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(offset?: string | number) => any',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'themeColor',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'color',
+                                                                                        propType:
+                                                                                            'string',
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'shade',
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'primaryFallback',
+                                                                                        propType:
+                                                                                            'bool',
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'useSplittedShade',
+                                                                                        propType:
+                                                                                            'bool',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(color: string, shade?: number, primaryFallback?: boolean, useSplittedShade?: boolean) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'rgba',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'color',
+                                                                                        propType:
+                                                                                            'string',
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'alpha',
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(color: string, alpha: number) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'linearGradient',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'deg',
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'colors',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'arrayOf',
+                                                                                                value: 'string',
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(deg: number, ...colors: string[]) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'radialGradient',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'colors',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'arrayOf',
+                                                                                                value: 'string',
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(...colors: string[]) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'gradient',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'gradient',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'from',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'to',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'deg',
+                                                                                                        propType:
+                                                                                                            'number',
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(gradient?: MantineGradient) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'smallerThan',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'breakpoint',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                value: [
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            'xs',
+                                                                                                            'sm',
+                                                                                                            'md',
+                                                                                                            'lg',
+                                                                                                            'xl',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(breakpoint: MantineNumberSize) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'largerThan',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'breakpoint',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                value: [
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            'xs',
+                                                                                                            'sm',
+                                                                                                            'md',
+                                                                                                            'lg',
+                                                                                                            'xl',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(breakpoint: MantineNumberSize) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'lighten',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'color',
+                                                                                        propType:
+                                                                                            'string',
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'alpha',
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(color: string, alpha: number) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'darken',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'color',
+                                                                                        propType:
+                                                                                            'string',
+                                                                                    },
+                                                                                    {
+                                                                                        name: 'alpha',
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(color: string, alpha: number) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'radius',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'size',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOfType',
+                                                                                                value: [
+                                                                                                    'number',
+                                                                                                    'object',
+                                                                                                    {
+                                                                                                        type: 'oneOf',
+                                                                                                        value: [
+                                                                                                            'xs',
+                                                                                                            'sm',
+                                                                                                            'md',
+                                                                                                            'lg',
+                                                                                                            'xl',
+                                                                                                        ],
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(size?: MantineNumberSize) => string | number',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'variant',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'payload',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'shape',
+                                                                                                value: [
+                                                                                                    {
+                                                                                                        name: 'variant',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'string',
+                                                                                                                isRequired:
+                                                                                                                    true,
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'color',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'oneOfType',
+                                                                                                                value: [
+                                                                                                                    'object',
+                                                                                                                    {
+                                                                                                                        type: 'oneOf',
+                                                                                                                        value: [
+                                                                                                                            'dark',
+                                                                                                                            'gray',
+                                                                                                                            'red',
+                                                                                                                            'pink',
+                                                                                                                            'grape',
+                                                                                                                            'violet',
+                                                                                                                            'indigo',
+                                                                                                                            'blue',
+                                                                                                                            'cyan',
+                                                                                                                            'green',
+                                                                                                                            'lime',
+                                                                                                                            'yellow',
+                                                                                                                            'orange',
+                                                                                                                            'teal',
+                                                                                                                        ],
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'gradient',
+                                                                                                        propType:
+                                                                                                            {
+                                                                                                                type: 'shape',
+                                                                                                                value: [
+                                                                                                                    {
+                                                                                                                        name: 'from',
+                                                                                                                        propType:
+                                                                                                                            {
+                                                                                                                                type: 'string',
+                                                                                                                                isRequired:
+                                                                                                                                    true,
+                                                                                                                            },
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        name: 'to',
+                                                                                                                        propType:
+                                                                                                                            {
+                                                                                                                                type: 'string',
+                                                                                                                                isRequired:
+                                                                                                                                    true,
+                                                                                                                            },
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        name: 'deg',
+                                                                                                                        propType:
+                                                                                                                            'number',
+                                                                                                                    },
+                                                                                                                ],
+                                                                                                            },
+                                                                                                    },
+                                                                                                    {
+                                                                                                        name: 'primaryFallback',
+                                                                                                        propType:
+                                                                                                            'bool',
+                                                                                                    },
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(payload: VariantInput) => VariantOutput',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'primaryShade',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'colorScheme',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOf',
+                                                                                                value: [
+                                                                                                    'light',
+                                                                                                    'dark',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(colorScheme?: ColorScheme) => Shade',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'hover',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'hoverStyle',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'objectOf',
+                                                                                                value: 'oneOfType',
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(hoverStyle: CSSObject) => any',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'primaryColor',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'colorScheme',
+                                                                                        propType:
+                                                                                            {
+                                                                                                type: 'oneOf',
+                                                                                                value: [
+                                                                                                    'light',
+                                                                                                    'dark',
+                                                                                                ],
+                                                                                            },
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(colorScheme?: ColorScheme) => string',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'placeholderStyles',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                raw: '() => any',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'dimmed',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                raw: '() => string',
+                                                                            },
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'other',
+                                                            propType: {
+                                                                type: 'object',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'activeStyles',
+                                                            propType: {
+                                                                type: 'objectOf',
+                                                                isRequired:
+                                                                    true,
+                                                                value: 'oneOfType',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'datesLocale',
+                                                            propType: {
+                                                                type: 'string',
+                                                                isRequired:
+                                                                    true,
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'components',
+                                                            propType: {
+                                                                type: 'objectOf',
+                                                                isRequired:
+                                                                    true,
+                                                                value: 'shape',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'globalStyles',
+                                                            propType: {
+                                                                type: 'func',
+                                                                isRequired:
+                                                                    true,
+                                                                params: [
+                                                                    {
+                                                                        name: 'theme',
+                                                                        propType:
+                                                                            'object',
+                                                                    },
+                                                                ],
+                                                                raw: '(theme: MantineTheme) => CSSObject',
+                                                            },
+                                                        },
+                                                        {
+                                                            name: 'focusRingStyles',
+                                                            propType: {
+                                                                type: 'shape',
+                                                                isRequired:
+                                                                    true,
+                                                                value: [
+                                                                    {
+                                                                        name: 'styles',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'theme',
+                                                                                        propType:
+                                                                                            'object',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(theme: Pick<MantineTheme, "colorScheme" | "fontFamily" | "lineHeight" | "transitionTimingFunction" | "dir" | "primaryShade" | "focusRing" | "defaultRadius" | "loader" | ... 19 more ... | "focusRingStyles">) => CSSObject',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'resetStyles',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'theme',
+                                                                                        propType:
+                                                                                            'object',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(theme: Pick<MantineTheme, "colorScheme" | "fontFamily" | "lineHeight" | "transitionTimingFunction" | "dir" | "primaryShade" | "focusRing" | "defaultRadius" | "loader" | ... 19 more ... | "focusRingStyles">) => CSSObject',
+                                                                            },
+                                                                    },
+                                                                    {
+                                                                        name: 'inputStyles',
+                                                                        propType:
+                                                                            {
+                                                                                type: 'func',
+                                                                                isRequired:
+                                                                                    true,
+                                                                                params: [
+                                                                                    {
+                                                                                        name: 'theme',
+                                                                                        propType:
+                                                                                            'object',
+                                                                                    },
+                                                                                ],
+                                                                                returns:
+                                                                                    {
+                                                                                        propType:
+                                                                                            'number',
+                                                                                    },
+                                                                                raw: '(theme: Pick<MantineTheme, "colorScheme" | "fontFamily" | "lineHeight" | "transitionTimingFunction" | "dir" | "primaryShade" | "focusRing" | "defaultRadius" | "loader" | ... 19 more ... | "focusRingStyles">) => CSSObject',
+                                                                            },
+                                                                    },
+                                                                ],
+                                                            },
+                                                        },
+                                                    ],
+                                                },
+                                            },
+                                        ],
+                                        raw: '(theme: MantineTheme) => CSSObject',
+                                    },
+                                ],
+                            },
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Sx',
+                    tip: 'sx | undefined',
+                },
+            },
+            {
+                name: 'classNames',
+                propType: 'object',
+                title: {
+                    label: 'ClassNames',
+                    tip: 'classNames | undefined',
+                },
+            },
+            {
+                name: 'styles',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['object', 'func'],
+                },
+                title: {
+                    label: 'Styles',
+                    tip: 'styles | undefined',
+                },
+            },
+            {
+                name: 'unstyled',
+                propType: 'bool',
+                title: {
+                    label: 'Unstyled',
+                    tip: 'unstyled | undefined',
+                },
+            },
+            {
+                name: 'm',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'M',
+                    tip: 'm | undefined',
+                },
+            },
+            {
+                name: 'my',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'My',
+                    tip: 'my | undefined',
+                },
+            },
+            {
+                name: 'mx',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Mx',
+                    tip: 'mx | undefined',
+                },
+            },
+            {
+                name: 'mt',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Mt',
+                    tip: 'mt | undefined',
+                },
+            },
+            {
+                name: 'mb',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Mb',
+                    tip: 'mb | undefined',
+                },
+            },
+            {
+                name: 'ml',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Ml',
+                    tip: 'ml | undefined',
+                },
+            },
+            {
+                name: 'mr',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Mr',
+                    tip: 'mr | undefined',
+                },
+            },
+            {
+                name: 'p',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'P',
+                    tip: 'p | undefined',
+                },
+            },
+            {
+                name: 'py',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Py',
+                    tip: 'py | undefined',
+                },
+            },
+            {
+                name: 'px',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Px',
+                    tip: 'px | undefined',
+                },
+            },
+            {
+                name: 'pt',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Pt',
+                    tip: 'pt | undefined',
+                },
+            },
+            {
+                name: 'pb',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Pb',
+                    tip: 'pb | undefined',
+                },
+            },
+            {
+                name: 'pl',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Pl',
+                    tip: 'pl | undefined',
+                },
+            },
+            {
+                name: 'pr',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Pr',
+                    tip: 'pr | undefined',
+                },
+            },
+            {
+                name: 'bg',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                'dark',
+                                'gray',
+                                'red',
+                                'pink',
+                                'grape',
+                                'violet',
+                                'indigo',
+                                'blue',
+                                'cyan',
+                                'green',
+                                'lime',
+                                'yellow',
+                                'orange',
+                                'teal',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Bg',
+                    tip: 'bg | undefined',
+                },
+            },
+            {
+                name: 'c',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                'dark',
+                                'gray',
+                                'red',
+                                'pink',
+                                'grape',
+                                'violet',
+                                'indigo',
+                                'blue',
+                                'cyan',
+                                'green',
+                                'lime',
+                                'yellow',
+                                'orange',
+                                'teal',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'C',
+                    tip: 'c | undefined',
+                },
+            },
+            {
+                name: 'opacity',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Opacity',
+                    tip: 'opacity | undefined',
+                },
+            },
+            {
+                name: 'ff',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'cursive',
+                                'fantasy',
+                                'monospace',
+                                'sans-serif',
+                                'serif',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Ff',
+                    tip: 'ff | undefined',
+                },
+            },
+            {
+                name: 'fz',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'number',
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: ['xs', 'sm', 'md', 'lg', 'xl'],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Fz',
+                    tip: 'fz | undefined',
+                },
+            },
+            {
+                name: 'fw',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'normal',
+                                'bold',
+                                'bolder',
+                                'lighter',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Fw',
+                    tip: 'fw | undefined',
+                },
+            },
+            {
+                name: 'lts',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+
+            },
+            {
+                name: 'ta',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'center',
+                                'end',
+                                'start',
+                                'left',
+                                'right',
+                                'justify',
+                                'match-parent',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Ta',
+                    tip: 'ta | undefined',
+                },
+            },
+            {
+                name: 'lh',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Lh',
+                    tip: 'lh | undefined',
+                },
+            },
+            {
+                name: 'fs',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'normal',
+                                'italic',
+                                'oblique',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Fs',
+                    tip: 'fs | undefined',
+                },
+            },
+            {
+                name: 'tt',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'capitalize',
+                                'full-size-kana',
+                                'full-width',
+                                'lowercase',
+                                'none',
+                                'uppercase',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Tt',
+                    tip: 'tt | undefined',
+                },
+            },
+            {
+                name: 'td',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Td',
+                    tip: 'td | undefined',
+                },
+            },
+            {
+                name: 'w',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'W',
+                    tip: 'w | undefined',
+                },
+            },
+            {
+                name: 'miw',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Miw',
+                    tip: 'miw | undefined',
+                },
+            },
+            {
+                name: 'maw',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Maw',
+                    tip: 'maw | undefined',
+                },
+            },
+            {
+                name: 'h',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'H',
+                    tip: 'h | undefined',
+                },
+            },
+            {
+                name: 'mih',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Mih',
+                    tip: 'mih | undefined',
+                },
+            },
+            {
+                name: 'mah',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Mah',
+                    tip: 'mah | undefined',
+                },
+            },
+            {
+                name: 'bgsz',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Bgsz',
+                    tip: 'bgsz | undefined',
+                },
+            },
+            {
+                name: 'bgp',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Bgp',
+                    tip: 'bgp | undefined',
+                },
+            },
+            {
+                name: 'bgr',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'no-repeat',
+                                'repeat',
+                                'repeat-x',
+                                'repeat-y',
+                                'round',
+                                'space',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Bgr',
+                    tip: 'bgr | undefined',
+                },
+            },
+            {
+                name: 'bga',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'fixed',
+                                'local',
+                                'scroll',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Bga',
+                    tip: 'bga | undefined',
+                },
+            },
+            {
+                name: 'pos',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'fixed',
+                                '-webkit-sticky',
+                                'absolute',
+                                'relative',
+                                'static',
+                                'sticky',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Pos',
+                    tip: 'pos | undefined',
+                },
+            },
+            {
+                name: 'top',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Top',
+                    tip: 'top | undefined',
+                },
+            },
+            {
+                name: 'left',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: '左',
+                    tip: 'left | undefined',
+                },
+            },
+            {
+                name: 'bottom',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Bottom',
+                    tip: 'bottom | undefined',
+                },
+            },
+            {
+                name: 'right',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: '右',
+                    tip: 'right | undefined',
+                },
+            },
+            {
+                name: 'inset',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number', 'object'],
+                },
+                title: {
+                    label: 'Inset',
+                    tip: 'inset | undefined',
+                },
+            },
+            {
+                name: 'display',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        'object',
+                        {
+                            type: 'oneOf',
+                            value: [
+                                '-moz-initial',
+                                'inherit',
+                                'initial',
+                                'revert',
+                                'revert-layer',
+                                'unset',
+                                'flex',
+                                'grid',
+                                'none',
+                                'block',
+                                'inline',
+                                'run-in',
+                                '-ms-flexbox',
+                                '-ms-grid',
+                                '-webkit-flex',
+                                'flow',
+                                'flow-root',
+                                'ruby',
+                                'table',
+                                'ruby-base',
+                                'ruby-base-container',
+                                'ruby-text',
+                                'ruby-text-container',
+                                'table-caption',
+                                'table-cell',
+                                'table-column',
+                                'table-column-group',
+                                'table-footer-group',
+                                'table-header-group',
+                                'table-row',
+                                'table-row-group',
+                                '-ms-inline-flexbox',
+                                '-ms-inline-grid',
+                                '-webkit-inline-flex',
+                                'inline-block',
+                                'inline-flex',
+                                'inline-grid',
+                                'inline-list-item',
+                                'inline-table',
+                                'contents',
+                                'list-item',
+                            ],
+                        },
+                    ],
+                },
+                title: {
+                    label: 'Display',
+                    tip: 'display | undefined',
+                },
+            },
+            {
+                name: 'ref',
+                propType: {
+                    type: 'oneOfType',
+                    value: [
+                        {
+                            type: 'func',
+                            params: [
+                                {
+                                    name: 'instance',
+                                    propType: 'object',
+                                },
+                            ],
+                            returns: {
+                                propType: 'number',
+                            },
+                            raw: '(instance: HTMLDivElement) => void',
+                        },
+                        'object',
+                    ],
+                },
+            },
+            {
+                name: 'key',
+                propType: {
+                    type: 'oneOfType',
+                    value: ['string', 'number'],
+                },
+                title: {
+                    label: 'Key',
+                    tip: 'key | undefined',
+                },
+            },
+        ],
+        group: 'UI 组件',
+        category: '布局',
+        configure: {
+            component: {
+                isContainer: false,
+            },
+            supports: {
+                style: true,
+            },
+        },
+        snippets: [
+            {
+                title: '网格列',
+                schema: {
+                    componentName: 'MantineGrid.Col',
+                    props: {},
+                },
+            },
+        ],
+    },
+] as IPublicTypeComponentMetadata[]
